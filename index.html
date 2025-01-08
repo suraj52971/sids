@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Suraj Singh - Math Teacher, Developer, and Blogger">
+    <title>SIDS Vidya Sansthan</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        header img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+        nav {
+            margin: 0;
+            padding: 1rem;
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 1.5rem;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        section {
+            padding: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .card {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 0.75rem;
+            text-align: left;
+        }
+        .admission th {
+            background-color: #ffcccc;
+        }
+        .tuition th {
+            background-color: #ccffcc;
+        }
+        .transportation th {
+            background-color: #ccccff;
+        }
+        .hostel th {
+            background-color: #ffffcc;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+
+
+
+       .notice-container {
+      width: 100%;
+      height: 60px;
+      overflow: hidden;
+      background-color: #ffdd57;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .notice-wrapper {
+      display: inline-block;
+      white-space: nowrap;
+      animation: horizontalMove 15s linear infinite;
+      position: relative;
+    }
+
+    .notice {
+      display: inline-block;
+      color: #333;
+      font-size: 22px;
+      font-weight: bold;
+      margin-right: 50px;
+    }
+
+    @keyframes horizontalMove {
+      0% {
+        transform: translateX(100%); /* Start from the right edge of the container */
+      }
+      100% {
+        transform: translateX(-100%); /* Move completely out to the left */
+      }
+    }
+
+    .whole-card{
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+
+        .id-card {
+      width: 900px; /* Length is three times the width */
+      height: 300px; /* Width */
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .id-card .left-section {
+      width: 30%;
+      background-color: #007bff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      color: white;
+      padding: 10px;
+    }
+
+    .id-card .left-section img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .id-card .right-section {
+      width: 70%;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .id-card .right-section h2 {
+      font-size: 30px;
+      margin: 0;
+      color: #333;
+    }
+
+    .id-card .right-section h3 {
+      font-size: 22px;
+      margin: 10px 0;
+      color: #007bff;
+    }
+
+    .id-card .right-section .details {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .id-card .right-section .details div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .id-card .right-section .details div img {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+    }
+
+
+        .image-card {
+        position: relative;
+        max-width: 100%;
+        margin: 20px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .image-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .image-card:hover img {
+        transform: scale(1.05);
+        filter: brightness(90%);
+    }
+
+    .image-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        padding: 10px;
+        font-size: 16px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+    }
+
+
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            header img {
+                height: 60px;
+                width: 60px;
+            }
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                padding: 0.5rem;
+            }
+            .id-card {
+                flex-direction: column;
+                height: auto;
+            }
+            .id-card .left-section, 
+            .id-card .right-section {
+                width: 100%;
+                padding: 1rem;
+                text-align: center;
+            }
+            .id-card .right-section h2 {
+                font-size: 24px;
+            }
+            .id-card .right-section h3 {
+                font-size: 18px;
+            }
+            section {
+                padding: 1rem;
+            }
+            .card {
+                padding: 1rem;
+            }
+            table, th, td {
+                font-size: 14px;
+            }
+            .notice-container {
+                height: auto;
+                padding: 0.5rem;
+            }
+            .notice {
+                font-size: 16px;
+            }
+        }
+
+   
+
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="images/logo.jpg" alt="SIDS Vidya Sansthan Logo">
+        <h1>SIDS VIDYA SANSTHAN</h1>
+        <p>ILMASNAGAR | SAMASTIPUR | 848117</p>
+    </header>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#projects">Projects</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+   <div class="notice-container">
+    <div class="notice-wrapper">
+        <div class="notice">🏫 SIDS VIDYA SANSTHAN 🏫</div>
+      <div class="notice">✨ Admission Open for New Session! ✨</div>
+      <div class="notice">📚 Quality Education for a Brighter Future! 📚</div>
+      <div class="notice">🏫 Join Us Today and Achieve Excellence! 🏫</div>
+       <div class="notice">📞 Phone: 9709690201, 8340566792  📞</div>
+    </div>
+  </div>
+
+
+
+
+<div class="whole-card">
+
+    <div class="id-card">
+    <!-- Left Section -->
+    <div class="left-section">
+      <img src="images/profile.jpg" alt="Logo">
+      <h3>SIDS Vidya Sansthan</h3>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <h2>Kishor Kinker</h2>
+      <h3>Principal</h3>
+      <div class="details">
+        <div>
+        
+          <span>📞-9709690201</span>
+        </div>
+        <div>
+         
+          <span>📞-8340566792</span>
+        </div>
+        <div>
+          
+          <span>💬(WhatsApp:)-9709450222</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+    <section id="about">
+        <div class="card">
+            <h2>About Us</h2>
+            <p>SIDS Vidya Sansthan is a premier educational institution in Samastipur, Bihar. We offer quality education from Nursery to Class IX with a focus on fostering curiosity and excellence. Our curriculum follows the CBSE pattern and integrates modern teaching methodologies.</p>
+            <p><strong>A Unit of Shree Rash Bihari Mission Trust:</strong> Shree Rash Bihari Mission is a non-profit organisation established in 2004. It works primarily in the domains of Education, Health, Employment, Art & Culture, Governance, Gender, Child & Youth Development, Technology, and Specially Abled. Its primary office is in Bhagalpur, Bihar.</p>
+        </div>
+    </section>
+
+    <section id="facilities">
+        <div class="card">
+            <h2>Our Facilities</h2>
+
+            <h3>Admission Fee</h3>
+            <table class="admission">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Details</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Hostel Admission Fee</td>
+                        <td>One-time admission fee</td>
+                        <td>₹1500</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Tuition Fee</h3>
+            <table class="tuition">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Details</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Nursery - I</td>
+                        <td>Monthly tuition fee</td>
+                        <td>₹600/month</td>
+                    </tr>
+                    <tr>
+                        <td>Class II - IV</td>
+                        <td>Monthly tuition fee</td>
+                        <td>₹700/month</td>
+                    </tr>
+                    <tr>
+                        <td>Class V - VII</td>
+                        <td>Monthly tuition fee</td>
+                        <td>₹800/month</td>
+                    </tr>
+                    <tr>
+                        <td>Class VIII - IX</td>
+                        <td>Monthly tuition fee</td>
+                        <td>₹900/month</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Transportation Fee</h3>
+            <table class="transportation">
+                <thead>
+                    <tr>
+                        <th>Distance</th>
+                        <th>Details</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>0-2 km</td>
+                        <td>Monthly transportation fee</td>
+                        <td>₹550/month</td>
+                    </tr>
+                    <tr>
+                        <td>2-4 km</td>
+                        <td>Monthly transportation fee</td>
+                        <td>₹650/month</td>
+                    </tr>
+                    <tr>
+                        <td>4-6 km</td>
+                        <td>Monthly transportation fee</td>
+                        <td>₹750/month</td>
+                    </tr>
+                    <tr>
+                        <td>6-8 km</td>
+                        <td>Monthly transportation fee</td>
+                        <td>₹850/month</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>Hostel Fee</h3>
+            <table class="hostel">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Details</th>
+                        <th>Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Class I - III</td>
+                        <td>Monthly hostel fee</td>
+                        <td>₹4000/month</td>
+                    </tr>
+                    <tr>
+                        <td>Class IV - X</td>
+                        <td>Monthly hostel fee</td>
+                        <td>₹7500/month</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="card">
+            <h2>Projects</h2>
+            <p>We are constantly working on integrating technology into education. Currently, we are developing smart class modules to enhance the learning experience.</p>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="card">
+            <h2>Portfolio</h2>
+            <p>Explore our achievements in education and extracurricular activities. This section will soon feature our students' projects and events.</p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="card">
+            <h2>Blog</h2>
+            <p>Stay updated with our latest news and insights about education, technology, and more. Blog posts are coming soon!</p>
+        </div>
+        <div class="image-card">
+    <img src="images/photo4.jpg" alt="Sample Photo">
+    <div class="image-caption">
+        Explore our gallery for memorable moments at SIDS Vidya Sansthan!
+    </div>
+</div>
+    </section>
+
+
+
+    <section id="contact">
+        <div class="card">
+            <h2>Contact Us</h2>
+            <p>Feel free to reach out to us for inquiries or admission details:</p>
+            <ul>
+                <li>Phone: 9709690201, 8340566792</li>
+                <li>WhatsApp: 9709450222</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p><strong>Principal:</strong> Mr. Kishor Kinker (also teaches)</p>
+        <p>Connect with us on <a href="https://www.facebook.com/people/SIDS-Vidya-Sansthan/61560388648946/">Facebook</a> | <a href="https://www.youtube.com/@SidsVidyaSansthan">YouTube</a></p>
+        <p>&copy; 2025 SIDS Vidya Sansthan</p>
+    </footer>
+
+
+
+</body>
+</html>
